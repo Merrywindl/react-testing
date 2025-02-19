@@ -15,6 +15,10 @@ interface Slide {
   image: string;
   story: string;
   fontColor: string;
+  updateslideFontColor: (newColor: string, idToUpdate?: number) => void;
+ 
+ 
+  setSelectedSlideId: (id: number) => void;
 }
 
 export default function App() {
@@ -111,7 +115,7 @@ export default function App() {
       <div className="d-flex flex-column vh-100">
         <Navbar selectedSlide={selectedSlide} changeBackgroundImage={handleImageCycle} updateslideFontColor={updateslideFontColor}/>
         <Routes>
-          <Route path="/" element={<MoviesPage slides={slides} selectedSlide={selectedSlide} addBlankSlide={addBlankSlide} deleteSlide={deleteSlide} updateslideFontColor={updateslideFontColor} isSidebarExpanded={isSidebarExpanded} setIsSidebarExpanded={setIsSidebarExpanded} setSelectedSlideId={setSelectedSlideId} />} />
+          <Route path="movies" element={<MoviesPage slides={slides} selectedSlide={selectedSlide} addBlankSlide={addBlankSlide} deleteSlide={deleteSlide} updateslideFontColor={updateslideFontColor} isSidebarExpanded={isSidebarExpanded} setIsSidebarExpanded={setIsSidebarExpanded} setSelectedSlideId={setSelectedSlideId} />} />
           <Route path="/music" element={<Music />} />
           <Route path="/games" element={<Games />} />
         </Routes>
@@ -128,11 +132,11 @@ interface MoviesPageProps {
   deleteSlide: (idToDelete: number) => void;
   updateslideFontColor: (newColor: string, idToUpdate?: number) => void;
   isSidebarExpanded: boolean;
-  setIsSidebarExpanded: (isExpanded: boolean) => void;
-  setSelectedSlideId: (id: number) => void;
+  setIsSidebarExpanded: (expanded: boolean) => void;
+  setSelectedSlideId: (id: number) => void; // Add this line
 }
 
-function MoviesPage({ slides, selectedSlide, addBlankSlide, deleteSlide, updateslideFontColor, isSidebarExpanded, setIsSidebarExpanded, setSelectedSlideId }: MoviesPageProps) {
+function MoviesPage({ slides, selectedSlide, addBlankSlide, deleteSlide, isSidebarExpanded, setIsSidebarExpanded, setSelectedSlideId }: MoviesPageProps) {
   return (
     <>
       <ListField />

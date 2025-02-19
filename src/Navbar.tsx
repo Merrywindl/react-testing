@@ -24,7 +24,7 @@ export default function Navbar({ changeBackgroundImage, updateslideFontColor, se
   return (
     <div className="bg-transparent p-3 border border-black border-5 d-flex justify-content-center w-100">
       <div className="bg-transparent p-3 d-flex justify-content-center w-75">
-        <Link to="/"><NavBarButton icon={Movies} onClick={() => {}} /></Link> {/*added links to the existing buttons*/}
+        <Link to="movies"><NavBarButton icon={Movies} onClick={() => {}} /></Link> {/*added links to the existing buttons*/}
         <Link to="/music"><NavBarButton icon={Music} onClick={() => {}} /></Link>
         <Link to="/games"><NavBarButton icon={Games} onClick={() => {}} /></Link>
       </div>
