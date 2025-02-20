@@ -115,7 +115,7 @@ export default function App() {
       <div className="d-flex flex-column vh-100">
         <Navbar selectedSlide={selectedSlide} changeBackgroundImage={handleImageCycle} updateslideFontColor={updateslideFontColor}/>
         <Routes>
-          <Route path="movies" element={<MoviesPage slides={slides} selectedSlide={selectedSlide} addBlankSlide={addBlankSlide} deleteSlide={deleteSlide} updateslideFontColor={updateslideFontColor} isSidebarExpanded={isSidebarExpanded} setIsSidebarExpanded={setIsSidebarExpanded} setSelectedSlideId={setSelectedSlideId} />} />
+          <Route path="/" element={<MoviesPage slides={slides} selectedSlide={selectedSlide} addBlankSlide={addBlankSlide} deleteSlide={deleteSlide} updateslideFontColor={updateslideFontColor} isSidebarExpanded={isSidebarExpanded} setIsSidebarExpanded={setIsSidebarExpanded} setSelectedSlideId={setSelectedSlideId} />} />
           <Route path="/music" element={<Music />} />
           <Route path="/games" element={<Games />} />
         </Routes>
